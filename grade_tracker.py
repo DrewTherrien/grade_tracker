@@ -1,3 +1,12 @@
+#Part 4
+import sys
+# Read command-line argument if provided
+if len(sys.argv) > 1:
+    mode = sys.argv[1]
+else:
+    mode = 'all'
+
+
 #Part 1
 names=[]
 scores=[]
@@ -30,18 +39,21 @@ for i in range(len(names)):
     if scores[i] < lowest:
         lowest= scores[i]
 average= total/len(names)
-print('')
-print('=== Grade Summary ===')
-print('Total students: ' + str(len(names)))
-print('Class average : ' + str(round(average,1)))
-print('Highest score: ' + str(highest))
-print('Lowest score: ' + str(lowest))
+
+if mode == 'all' or mode == 'summary':
+    print('')
+    print('=== Grade Summary ===')
+    print('Total students: ' + str(len(names)))
+    print('Class average : ' + str(round(average,1)))
+    print('Highest score: ' + str(highest))
+    print('Lowest score: ' + str(lowest))
 
 #Part 3
-print ('')
-print('=== Full Grade Report ===')
-print(f"{'Name':<20} {'Score':<8} {'Grade':<6}")
-print('-'*36)
+if mode == 'all' or mode == 'report':
+    print ('')
+    print('=== Full Grade Report ===')
+    print(f"{'Name':<20} {'Score':<8} {'Grade':<6}")
+    print('-'*36)
 
 for i in range(len(names)):
     score= scores[i]
