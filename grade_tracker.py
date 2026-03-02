@@ -69,3 +69,35 @@ for i in range(len(names)):
     else:
         letter= 'F'
     print(f"{names[i]:<20} {score:<8} {letter:<6}")
+
+#Part 5
+print('')
+print('=== Student Search ===')
+search= input('Enter a student name to search (or quit to exit): ')
+
+while search != 'quit':
+    found= False
+
+    for i in range(len(names)):
+        if names[i].lower() == search.lower():
+            score= scores[i]
+
+            if score >= 90:
+                letter= 'A'
+            elif score >= 80:
+                letter= 'B'
+            elif score >= 70:
+                letter= 'C'
+            elif score >= 60:
+                letter= 'D'
+            else:
+                letter= 'F'
+
+            print(f"{names[i]}  |  Score: {score}  | Grade: {letter}")
+            found= True
+    if found == False:
+        print('Student not found.')
+    
+    search=input('Search again (or quit to exit): ')
+
+print('Goodbye!')
