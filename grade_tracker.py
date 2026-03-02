@@ -1,3 +1,4 @@
+#Part 1
 names=[]
 scores=[]
 
@@ -17,7 +18,7 @@ while name != 'done':
         print(name + 'added!')
     name= input('Enter student name (or done to stop): ')
 print('Data entry complete. ' + str(len(names)) + ' students entered.')
-
+# Part 2
 total=0
 highest= scores[0]
 lowest= scores[0]
@@ -35,3 +36,24 @@ print('Total students: ' + str(len(names)))
 print('Class average : ' + str(round(average,1)))
 print('Highest score: ' + str(highest))
 print('Lowest score: ' + str(lowest))
+
+#Part 3
+print ('')
+print('=== Full Grade Report ===')
+print(f"{'Name':<20} {'Score':<8} {'Grade':<6}")
+print('-'*36)
+
+for i in range(len(names)):
+    score= scores[i]
+
+    if score >= 90:
+        letter= 'A'
+    elif score >= 80:
+        letter= 'B'
+    elif score >= 70:
+        letter= 'C'
+    elif score >= 60:
+        letter= 'D'
+    else:
+        letter= 'F'
+    print(f"{names[i]:<20} {score:<8} {letter:<6}")
