@@ -17,3 +17,21 @@ while name != 'done':
         print(name + 'added!')
     name= input('Enter student name (or done to stop): ')
 print('Data entry complete. ' + str(len(names)) + ' students entered.')
+
+total=0
+highest= scores[0]
+lowest= scores[0]
+
+for i in range(len(names)):
+    total= total+scores[i]
+    if scores[i] > highest:
+        highest= scores[i]
+    if scores[i] < lowest:
+        lowest= scores[i]
+average= total/len(names)
+print('')
+print('=== Grade Summary ===')
+print('Total students: ' + str(len(names)))
+print('Class average : ' + str(round(average,1)))
+print('Highest score: ' + str(highest))
+print('Lowest score: ' + str(lowest))
